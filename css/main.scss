@@ -20,11 +20,15 @@ $light_grey: #f6f6f6;
 $text_grey: #353535;
 $text_white: white;
 
+
 $icon_grey: #7e7e7e;
+$icon_darker_grey: #1f1f1f;
 
 $primary_color: #9356DC;
 $secondary_color: #FF79DA;
+$secondary_color_lighter: #f5edff;
 $tertiary_color: #99E2D0;
+$tertiary_color_darker: #008766;
 
 // shadow_variable
 $button_shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
@@ -131,7 +135,7 @@ rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
             transition: background-color 0.3s;
 
             &:active {
-                background-color: #f5edff;
+                background-color: $secondary_color_lighter;
             }
 
             &__number {
@@ -154,7 +158,7 @@ rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
                 font-size: 1.3rem;
             }
 
-            &__text{
+            &__text {
                 font-weight: 500;
                 font-size: 0.9rem;
             }
@@ -165,21 +169,88 @@ rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
 // restaurant
 
-.restaurant{
+.restaurant {
     padding: 3rem 1rem;
     background-color: $light_grey;
-    &__card{
+
+    &__title {
+        margin-bottom: 1.3rem;
+    }
+
+    &__card {
         background-color: white;
         border-radius: 1.2rem;
         overflow: hidden;
-        &__new{
-            display: none;
+        position: relative;
+        box-shadow: $button_shadow;
+
+        &__new {
+            opacity: 0;
+            position: absolute;
+            background-color: $tertiary_color;
+            color: $tertiary_color_darker;
+            border-radius: 0.1rem;
+            padding: 0.4rem 1rem;
+            font-weight: 500;
+            top: 1rem;
+            right: 1rem;
+
+            &--show{
+                opacity: 1;
+            }
         }
-        &__img{
+
+        &__img {
             width: 100%;
             height: 11rem;
             object-fit: cover;
             object-position: bottom;
+        }
+
+        &__name {
+            margin-bottom: 0.3rem;
+            margin-left: 1rem;
+            margin-top: 0.7rem;
+        }
+
+        &__location {
+            font-weight: 100;
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+        }
+
+        &__icon {
+            position: absolute;
+            bottom: 2rem;
+            right: 1.8rem;
+            color: $icon_darker_grey;
+            font-size: 1.6rem;
+        }
+
+        &__icon--active {
+            z-index: 2;
+            opacity: 0;
+            color: transparent;
+            transition: all 0.3s;
+            &::before {
+                -webkit-background-clip: text;
+                background-clip: text;
+                background-image: linear-gradient(to left top, #9356d5, #b25dd7, #ce65d8, #e76ed9, #ff79da);
+           }
+
+            &:active {
+                opacity: 1;
+                
+
+                &+.restaurant__card__icon {
+                    opacity: 0;
+                    transform: scale(2);
+                    transition: opacity 0.3s, transform 0.3s;
+
+                }
+            }
+
+
         }
 
     }

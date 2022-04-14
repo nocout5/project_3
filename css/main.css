@@ -176,14 +176,33 @@ html {
   background-color: #f6f6f6;
 }
 
+.restaurant__title {
+  margin-bottom: 1.3rem;
+}
+
 .restaurant__card {
   background-color: white;
   border-radius: 1.2rem;
   overflow: hidden;
+  position: relative;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .restaurant__card__new {
-  display: none;
+  opacity: 0;
+  position: absolute;
+  background-color: #99E2D0;
+  color: #008766;
+  border-radius: 0.1rem;
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+  top: 1rem;
+  right: 1rem;
+}
+
+.restaurant__card__new--show {
+  opacity: 1;
 }
 
 .restaurant__card__img {
@@ -193,5 +212,54 @@ html {
      object-fit: cover;
   -o-object-position: bottom;
      object-position: bottom;
+}
+
+.restaurant__card__name {
+  margin-bottom: 0.3rem;
+  margin-left: 1rem;
+  margin-top: 0.7rem;
+}
+
+.restaurant__card__location {
+  font-weight: 100;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.restaurant__card__icon {
+  position: absolute;
+  bottom: 2rem;
+  right: 1.8rem;
+  color: #1f1f1f;
+  font-size: 1.6rem;
+}
+
+.restaurant__card__icon--active {
+  z-index: 2;
+  opacity: 0;
+  color: transparent;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.restaurant__card__icon--active::before {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#9356d5), color-stop(#b25dd7), color-stop(#ce65d8), color-stop(#e76ed9), to(#ff79da));
+  background-image: linear-gradient(to left top, #9356d5, #b25dd7, #ce65d8, #e76ed9, #ff79da);
+}
+
+.restaurant__card__icon--active:active {
+  opacity: 1;
+}
+
+.restaurant__card__icon--active:active + .restaurant__card__icon {
+  opacity: 0;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
 }
 /*# sourceMappingURL=main.css.map */
