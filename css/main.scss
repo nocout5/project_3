@@ -15,8 +15,9 @@ html {
     user-select: none;
     font-size: 100%;
     transition: all 0.3s;
+
     @media (min-width: 768px) {
-         font-size: 130%;
+        font-size: 130%;
     }
 }
 
@@ -56,6 +57,7 @@ rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     justify-content: center;
     align-items: center;
     padding: 2rem 0 1rem 0;
+    background-color: white;
 
     &__logo {
         height: auto;
@@ -130,8 +132,9 @@ rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     &__title {
         margin-bottom: 2rem;
         width: 100%;
+
         @media (min-width: 520px) {
-            text-align: center;        
+            text-align: center;
         }
     }
 
@@ -175,7 +178,7 @@ rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
                 position: absolute;
                 transform: translate(-50%, -50%);
                 top: 50%;
-                
+
             }
 
             &__icon {
@@ -217,9 +220,11 @@ rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         flex-basis: 15rem;
         flex-grow: 1;
         min-width: 40%;
+
         @media (min-width:1386px) {
             min-width: 20%;
         }
+
         background-color: white;
         border-radius: 1.2rem;
         overflow: hidden;
@@ -251,10 +256,12 @@ rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
                 width: 100%;
                 height: 11rem;
                 object-fit: cover;
-                &--bottom_view{
+
+                &--bottom_view {
                     object-position: bottom;
                 }
-                &--center_view{
+
+                &--center_view {
                     object-position: 50% 61%;
                 }
             }
@@ -271,7 +278,7 @@ rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
             }
         }
 
-       
+
 
         &__icon {
             position: absolute;
@@ -315,7 +322,7 @@ rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
 // footer
 
-.footer{
+.footer {
     padding: 1.5rem 1rem 2.5rem 1rem;
     display: flex;
     flex-direction: column;
@@ -323,33 +330,42 @@ rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     color: $text_white;
     font-size: 1rem;
     gap: 0.5rem;
+
     @media (min-width: 538px) {
         padding-left: 20%;
     }
+
     @media (min-width: 1280px) {
         flex-direction: row;
         justify-content: space-around;
         padding-left: 1rem;
         align-items: center;
     }
-    &__title{
+
+
+
+    &__title {
         width: 100%;
         height: auto;
         width: 6.8rem;
         margin-bottom: 1rem;
-        &>*{
+
+        &>* {
             fill: white;
         }
     }
-    &__elmt{
+
+    &__elmt {
         position: relative;
-        &__icon{
+
+        &__icon {
             position: absolute;
             font-size: 0.9rem;
             top: 50%;
             transform: translateY(-50%);
         }
-        &__text{
+
+        &__text {
             margin-left: 2rem;
         }
     }
