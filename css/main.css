@@ -135,6 +135,10 @@ a {
   outline: 3px solid #FF79DA;
 }
 
+.function:nth-child(1) {
+  border: 2px solid red;
+}
+
 .function {
   padding: 3rem 1rem 5rem 1rem;
 }

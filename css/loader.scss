@@ -1,32 +1,95 @@
-.loader{
+// color_variable
+$dark_grey: #eaeaea;
+$light_grey: #f6f6f6;
+$text_grey: #353535;
+$text_white: white;
+
+$footer_grey: #353535;
+
+
+$icon_grey: #7e7e7e;
+$icon_darker_grey: #1f1f1f;
+
+$primary_color: #9356DC;
+$secondary_color: #FF79DA;
+$secondary_color_lighter: #f5edff;
+$tertiary_color: #99E2D0;
+$tertiary_color_darker: #008766;
+
+
+
+
+
+
+
+.loader {
     position: fixed;
-    top: 	0;
+    top: 0;
     width: 100%;
     height: 100%;
     z-index: 1000;
-    background-color: red;
+    background-color: $secondary_color;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: loader_end 1s 1s forwards;
-    &__anim{
+    animation: loader_end 1s 10s forwards;
 
+    &__anim {
+
+        &__cooking-pot {
+
+            &__flame {
+                animation: flame 1s infinite alternate linear backwards;
+              &>*{
+              }
+            }
+
+            &__pot{
+                transform-origin: center;
+                animation: pot 1s infinite alternate ease-in-out;
+            }
+        }
     }
 }
+
+
+
 
 @keyframes loader_end {
     0% {
         transform: translateY(0);
     }
 
-    90%{
+    90% {
         transform: translateY(100vh);
         opacity: 1;
     }
 
-    100%{
+    100% {
         transform: translateY(100vh);
         opacity: 0;
         visibility: hidden;
     }
+}
+
+@keyframes flame {
+    0% {
+        transform: translateY(12px);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+
+}
+
+@keyframes pot {
+    0%{
+        transform: rotate(-5deg);
+    }
+
+    100%{
+        transform: rotate(5deg);
+    }
+    
 }

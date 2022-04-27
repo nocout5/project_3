@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   z-index: 1000;
-  background-color: red;
+  background-color: #FF79DA;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,8 +14,20 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: loader_end 1s 1s forwards;
-          animation: loader_end 1s 1s forwards;
+  -webkit-animation: loader_end 1s 10s forwards;
+          animation: loader_end 1s 10s forwards;
+}
+
+.loader__anim__cooking-pot__flame {
+  -webkit-animation: flame 1s infinite alternate linear backwards;
+          animation: flame 1s infinite alternate linear backwards;
+}
+
+.loader__anim__cooking-pot__pot {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: pot 1s infinite alternate ease-in-out;
+          animation: pot 1s infinite alternate ease-in-out;
 }
 
 @-webkit-keyframes loader_end {
@@ -51,6 +63,50 @@
             transform: translateY(100vh);
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+@-webkit-keyframes flame {
+  0% {
+    -webkit-transform: translateY(12px);
+            transform: translateY(12px);
+  }
+  100% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+@keyframes flame {
+  0% {
+    -webkit-transform: translateY(12px);
+            transform: translateY(12px);
+  }
+  100% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+@-webkit-keyframes pot {
+  0% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+}
+
+@keyframes pot {
+  0% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
   }
 }
 /*# sourceMappingURL=loader.css.map */
