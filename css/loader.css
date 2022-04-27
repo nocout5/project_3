@@ -1,4 +1,5 @@
 .header, .location, .description, .function, .restaurant, .footer {
+  opacity: 0;
   -webkit-animation: content_show 0.5s 4s both linear;
           animation: content_show 0.5s 4s both linear;
 }
