@@ -1,3 +1,8 @@
+.header, .location, .description, .function, .restaurant, .footer {
+  -webkit-animation: content_show 0.5s 4s forwards linear;
+          animation: content_show 0.5s 4s forwards linear;
+}
+
 .loader {
   position: fixed;
   top: 0;
@@ -100,7 +105,7 @@
 
 .loader__bar {
   position: absolute;
-  bottom: 100px;
+  bottom: 50px;
   border: 5px solid tomato;
   width: 14.8rem;
   height: 1rem;
@@ -161,6 +166,24 @@
   100% {
     -webkit-transform: scaleX(100%);
             transform: scaleX(100%);
+  }
+}
+
+@-webkit-keyframes content_show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes content_show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
