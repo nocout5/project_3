@@ -18,9 +18,44 @@
           animation: loader_end 1s 10s forwards;
 }
 
-.loader__anim__cooking-pot__flame {
-  -webkit-animation: flame 1s infinite alternate linear backwards;
-          animation: flame 1s infinite alternate linear backwards;
+.loader__anim {
+  height: 100%;
+}
+
+.loader__anim__cooking-pot__flame g {
+  -webkit-animation: flame -1s infinite alternate linear forwards;
+          animation: flame -1s infinite alternate linear forwards;
+  opacity: 0;
+}
+
+.loader__anim__cooking-pot__flame g:nth-child(1) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.loader__anim__cooking-pot__flame g:nth-child(2) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.loader__anim__cooking-pot__flame g:nth-child(3) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.loader__anim__cooking-pot__flame g:nth-child(4) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.loader__anim__cooking-pot__flame g:nth-child(5) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.loader__anim__cooking-pot__flame g:nth-child(6) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
 }
 
 .loader__anim__cooking-pot__pot {
@@ -28,6 +63,12 @@
           transform-origin: center;
   -webkit-animation: pot 1s infinite alternate ease-in-out;
           animation: pot 1s infinite alternate ease-in-out;
+}
+
+#Vector, #Vector_2 {
+  fill: yellow;
+  -webkit-filter: drop-shadow(0px 0px 6px yellow);
+          filter: drop-shadow(0px 0px 6px yellow);
 }
 
 @-webkit-keyframes loader_end {
@@ -70,10 +111,12 @@
   0% {
     -webkit-transform: translateY(12px);
             transform: translateY(12px);
+    opacity: 1;
   }
   100% {
     -webkit-transform: translateY(-20px);
             transform: translateY(-20px);
+    opacity: 1;
   }
 }
 
@@ -81,32 +124,34 @@
   0% {
     -webkit-transform: translateY(12px);
             transform: translateY(12px);
+    opacity: 1;
   }
   100% {
     -webkit-transform: translateY(-20px);
             transform: translateY(-20px);
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes pot {
   0% {
-    -webkit-transform: rotate(-5deg);
-            transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg) translateY(-2rem);
+            transform: rotate(-5deg) translateY(-2rem);
   }
   100% {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
+    -webkit-transform: rotate(5deg) translateY(-2rem);
+            transform: rotate(5deg) translateY(-2rem);
   }
 }
 
 @keyframes pot {
   0% {
-    -webkit-transform: rotate(-5deg);
-            transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg) translateY(-2rem);
+            transform: rotate(-5deg) translateY(-2rem);
   }
   100% {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
+    -webkit-transform: rotate(5deg) translateY(-2rem);
+            transform: rotate(5deg) translateY(-2rem);
   }
 }
 /*# sourceMappingURL=loader.css.map */

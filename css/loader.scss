@@ -35,21 +35,34 @@ $tertiary_color_darker: #008766;
     animation: loader_end 1s 10s forwards;
 
     &__anim {
+        height: 100%;
 
         &__cooking-pot {
 
             &__flame {
-                animation: flame 1s infinite alternate linear backwards;
-              &>*{
-              }
+
+                & g {
+                    animation: flame -1s infinite alternate linear forwards;
+                    opacity: 0;
+                    @for $i from 1 to 7 {
+                        &:nth-child(#{$i}) {
+                            animation-delay: #{$i * 0.2}s;
+                        }
+                    }
+                }
             }
 
-            &__pot{
+            &__pot {
                 transform-origin: center;
                 animation: pot 1s infinite alternate ease-in-out;
             }
         }
     }
+}
+
+#Vector, #Vector_2{
+    fill: yellow;
+    filter: drop-shadow(0px 0px 6px yellow);
 }
 
 
@@ -75,21 +88,23 @@ $tertiary_color_darker: #008766;
 @keyframes flame {
     0% {
         transform: translateY(12px);
+        opacity: 1;
     }
 
     100% {
         transform: translateY(-20px);
+        opacity: 1;
     }
 
 }
 
 @keyframes pot {
-    0%{
-        transform: rotate(-5deg);
+    0% {
+        transform: rotate(-5deg) translateY(-2rem);
     }
 
-    100%{
-        transform: rotate(5deg);
+    100% {
+        transform: rotate(5deg) translateY(-2rem);
     }
-    
+
 }
