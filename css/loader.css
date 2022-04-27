@@ -1,6 +1,9 @@
 .loader {
   position: fixed;
   top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   z-index: 1000;
@@ -8,14 +11,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: loader_end 1s 6s forwards;
-          animation: loader_end 1s 6s forwards;
+  -webkit-animation: loader_end 1s 4s both;
+          animation: loader_end 1s 4s both;
+  overflow: hidden;
 }
 
 .loader__anim {
@@ -23,36 +31,42 @@
 }
 
 .loader__anim__cooking-pot__flame g {
-  -webkit-animation: flame 0.5s infinite alternate linear;
-          animation: flame 0.5s infinite alternate linear;
+  -webkit-animation: flame 0.5s infinite alternate ease-in-out;
+          animation: flame 0.5s infinite alternate ease-in-out;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(1), .loader__anim__cooking-pot__flame g:nth-child(1) path:nth-child(2) {
+.loader__anim__cooking-pot__flame g:nth-child(1),
+.loader__anim__cooking-pot__flame g:nth-child(1) path:nth-child(2) {
   -webkit-animation-delay: -0.8s;
           animation-delay: -0.8s;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(2), .loader__anim__cooking-pot__flame g:nth-child(2) path:nth-child(2) {
+.loader__anim__cooking-pot__flame g:nth-child(2),
+.loader__anim__cooking-pot__flame g:nth-child(2) path:nth-child(2) {
   -webkit-animation-delay: -0.6s;
           animation-delay: -0.6s;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(3), .loader__anim__cooking-pot__flame g:nth-child(3) path:nth-child(2) {
+.loader__anim__cooking-pot__flame g:nth-child(3),
+.loader__anim__cooking-pot__flame g:nth-child(3) path:nth-child(2) {
   -webkit-animation-delay: -0.4s;
           animation-delay: -0.4s;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(4), .loader__anim__cooking-pot__flame g:nth-child(4) path:nth-child(2) {
+.loader__anim__cooking-pot__flame g:nth-child(4),
+.loader__anim__cooking-pot__flame g:nth-child(4) path:nth-child(2) {
   -webkit-animation-delay: -0.2s;
           animation-delay: -0.2s;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(5), .loader__anim__cooking-pot__flame g:nth-child(5) path:nth-child(2) {
+.loader__anim__cooking-pot__flame g:nth-child(5),
+.loader__anim__cooking-pot__flame g:nth-child(5) path:nth-child(2) {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(6), .loader__anim__cooking-pot__flame g:nth-child(6) path:nth-child(2) {
+.loader__anim__cooking-pot__flame g:nth-child(6),
+.loader__anim__cooking-pot__flame g:nth-child(6) path:nth-child(2) {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
@@ -74,6 +88,72 @@
           transform-origin: center;
   -webkit-animation: pot 1s infinite alternate ease-in-out;
           animation: pot 1s infinite alternate ease-in-out;
+}
+
+.loader__bar {
+  position: absolute;
+  bottom: 10rem;
+  border: 5px solid tomato;
+  width: 14.8rem;
+  height: 1rem;
+  border-radius: 15px;
+}
+
+.loader__bar__color {
+  width: 100%;
+  height: 100%;
+  background-color: #ff46cc;
+  -webkit-animation: load-bar 4s linear forwards;
+          animation: load-bar 4s linear forwards;
+  -webkit-transform-origin: 0%;
+          transform-origin: 0%;
+  border-radius: 15px;
+}
+
+@-webkit-keyframes load-bar {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  25% {
+    -webkit-transform: scaleX(50%);
+            transform: scaleX(50%);
+  }
+  50% {
+    -webkit-transform: scaleX(75%);
+            transform: scaleX(75%);
+  }
+  75% {
+    -webkit-transform: scaleX(85%);
+            transform: scaleX(85%);
+  }
+  100% {
+    -webkit-transform: scaleX(100%);
+            transform: scaleX(100%);
+  }
+}
+
+@keyframes load-bar {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  25% {
+    -webkit-transform: scaleX(50%);
+            transform: scaleX(50%);
+  }
+  50% {
+    -webkit-transform: scaleX(75%);
+            transform: scaleX(75%);
+  }
+  75% {
+    -webkit-transform: scaleX(85%);
+            transform: scaleX(85%);
+  }
+  100% {
+    -webkit-transform: scaleX(100%);
+            transform: scaleX(100%);
+  }
 }
 
 @-webkit-keyframes loader_end {
