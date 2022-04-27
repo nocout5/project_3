@@ -116,6 +116,23 @@ a {
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   margin-bottom: 0.9rem;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.description__button:hover {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#ad7fdf), color-stop(#c586e1), color-stop(#db8ee2), color-stop(#ee9ae4), to(#fface8));
+  background-image: linear-gradient(to left top, #ad7fdf, #c586e1, #db8ee2, #ee9ae4, #fface8);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.description__button:active {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  outline: 3px solid #FF79DA;
 }
 
 .function {

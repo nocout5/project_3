@@ -21,19 +21,43 @@ $break-desktop: 850px;
 $button_shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
 rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
+// mixin
+@mixin text-shorten {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
-body{
-    @media (min-width: $break-desktop) {
-        background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+
+@media (min-width: $break-desktop) {
+    body {
         background-size: cover;
         background-position: center;
+    }
 
+    .palette {
+        background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+    }
+
+    .delice {
+        background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+        background-position: bottom;
+    }
+
+    .enchantee{
+        background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+    }
+
+    .francaise{
+        background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
     }
 }
+
 
 // header menu
 .header {
     position: relative;
+
 
     &__anchor {
         &__arrow {
@@ -42,7 +66,6 @@ body{
             left: 1.6rem;
             color: $text_grey;
             font-size: 1.5rem;
-
         }
     }
 }
@@ -54,6 +77,7 @@ body{
     z-index: -1;
     width: 100%;
     height: 50vw;
+
     @media (min-width: $break-desktop) {
         display: none;
     }
@@ -62,6 +86,7 @@ body{
         width: 100%;
         height: 120%;
         object-fit: cover;
+
         @media (min-width: $break-desktop) {
             display: none;
 
@@ -78,6 +103,7 @@ body{
     position: relative;
     max-width: $break-desktop;
     margin: auto;
+
     @media (min-width: $break-desktop) {
         margin-top: 2rem;
         background-color: rgba(246, 246, 246, 0.7);
@@ -150,12 +176,12 @@ body{
                 border-bottom: 3px solid $tertiary_color;
             }
 
-            
+
         }
 
-       
 
-      
+
+
 
         &__card {
             background-color: white;
@@ -165,14 +191,15 @@ body{
             display: flex;
             flex-direction: row;
             overflow: hidden;
-            animation: slide-up 0.7s 1.1s backwards linear;
-            @for $i from 3 to 10{
-                &:nth-child(#{$i}){
-                    animation-delay: #{$i * 0.1 + 1}s;
+            animation: slide-up 0.7s 1s backwards linear;
+
+            @for $i from 3 to 10 {
+                &:nth-child(#{$i}) {
+                    animation-delay: #{$i * 0.1 + 0.8}s;
                 }
             }
-           
-          
+
+
 
             &__dishes_text {
 
@@ -181,13 +208,14 @@ body{
                 flex-basis: 80%;
                 overflow: hidden;
 
+
                 &__dishes_name {
                     font-weight: 500;
                     font-size: 1.1rem;
                     margin-top: 0.7rem;
                     margin-bottom: 0.4rem;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+                    @include text-shorten();
+
 
                 }
 
@@ -195,8 +223,7 @@ body{
                     font-weight: 300;
                     font-size: 0.9rem;
                     margin-bottom: 0.7rem;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+                    @include text-shorten();
 
                 }
             }
@@ -247,6 +274,11 @@ body{
         }
     }
 
+
+
+
+
+
     &__gradient-button {
         background-image: linear-gradient(to left top, #9356d5, #b25dd7, #ce65d8, #e76ed9, #ff79da);
         border-radius: 5rem;
@@ -259,6 +291,19 @@ body{
         align-self: center;
         width: 50%;
         text-align: center;
+        transition: all 0.4s;
+
+        &:hover {
+            $lighten: 10%;
+            background-image: linear-gradient(to left top, lighten(#9356d5, $lighten), lighten(#b25dd7, $lighten), lighten(#ce65d8, $lighten), lighten(#e76ed9, $lighten), lighten(#ff79da, $lighten));
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(1.15);
+            outline: 3px solid $secondary_color;
+        }
+
     }
 
 }
