@@ -21,7 +21,7 @@ $load-time: 4s;
 $break-desktop: 850px;
 
 .header, .location, .description, .function, .restaurant, .footer{
-    animation: content_show 0.5s $load-time forwards linear;
+    animation: content_show 0.5s $load-time both linear;
 }
 
 

@@ -1,6 +1,6 @@
 .header, .location, .description, .function, .restaurant, .footer {
-  -webkit-animation: content_show 0.5s 4s forwards linear;
-          animation: content_show 0.5s 4s forwards linear;
+  -webkit-animation: content_show 0.5s 4s both linear;
+          animation: content_show 0.5s 4s both linear;
 }
 
 .loader {
