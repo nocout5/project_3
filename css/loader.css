@@ -28,6 +28,14 @@
 
 .loader__anim {
   height: 100%;
+  width: 20rem;
+  position: relative;
+}
+
+@media (min-width: 850px) {
+  .loader__anim {
+    width: 30rem;
+  }
 }
 
 .loader__anim__cooking-pot__flame g {
@@ -92,7 +100,7 @@
 
 .loader__bar {
   position: absolute;
-  bottom: 10rem;
+  bottom: 100px;
   border: 5px solid tomato;
   width: 14.8rem;
   height: 1rem;
