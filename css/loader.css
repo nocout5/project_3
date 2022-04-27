@@ -14,8 +14,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: loader_end 1s 10s forwards;
-          animation: loader_end 1s 10s forwards;
+  -webkit-animation: loader_end 1s 6s forwards;
+          animation: loader_end 1s 6s forwards;
 }
 
 .loader__anim {
@@ -23,39 +23,50 @@
 }
 
 .loader__anim__cooking-pot__flame g {
-  -webkit-animation: flame -1s infinite alternate linear forwards;
-          animation: flame -1s infinite alternate linear forwards;
-  opacity: 0;
+  -webkit-animation: flame 0.5s infinite alternate linear;
+          animation: flame 0.5s infinite alternate linear;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(1) {
+.loader__anim__cooking-pot__flame g:nth-child(1), .loader__anim__cooking-pot__flame g:nth-child(1) path:nth-child(2) {
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+
+.loader__anim__cooking-pot__flame g:nth-child(2), .loader__anim__cooking-pot__flame g:nth-child(2) path:nth-child(2) {
+  -webkit-animation-delay: -0.6s;
+          animation-delay: -0.6s;
+}
+
+.loader__anim__cooking-pot__flame g:nth-child(3), .loader__anim__cooking-pot__flame g:nth-child(3) path:nth-child(2) {
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+
+.loader__anim__cooking-pot__flame g:nth-child(4), .loader__anim__cooking-pot__flame g:nth-child(4) path:nth-child(2) {
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+
+.loader__anim__cooking-pot__flame g:nth-child(5), .loader__anim__cooking-pot__flame g:nth-child(5) path:nth-child(2) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.loader__anim__cooking-pot__flame g:nth-child(6), .loader__anim__cooking-pot__flame g:nth-child(6) path:nth-child(2) {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(2) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+.loader__anim__cooking-pot__flame g path:nth-child(1) {
+  fill: orangered;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(3) {
-  -webkit-animation-delay: 0.6s;
-          animation-delay: 0.6s;
-}
-
-.loader__anim__cooking-pot__flame g:nth-child(4) {
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
-}
-
-.loader__anim__cooking-pot__flame g:nth-child(5) {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-}
-
-.loader__anim__cooking-pot__flame g:nth-child(6) {
-  -webkit-animation-delay: 1.2s;
-          animation-delay: 1.2s;
+.loader__anim__cooking-pot__flame g path:nth-child(2) {
+  fill: #ff6a33;
+  -webkit-filter: drop-shadow(0px 0px 6px #ff6a33);
+          filter: drop-shadow(0px 0px 6px #ff6a33);
+  -webkit-animation: flame_glow 1s infinite alternate linear backwards;
+          animation: flame_glow 1s infinite alternate linear backwards;
 }
 
 .loader__anim__cooking-pot__pot {
@@ -63,12 +74,6 @@
           transform-origin: center;
   -webkit-animation: pot 1s infinite alternate ease-in-out;
           animation: pot 1s infinite alternate ease-in-out;
-}
-
-#Vector, #Vector_2 {
-  fill: yellow;
-  -webkit-filter: drop-shadow(0px 0px 6px yellow);
-          filter: drop-shadow(0px 0px 6px yellow);
 }
 
 @-webkit-keyframes loader_end {
@@ -111,12 +116,10 @@
   0% {
     -webkit-transform: translateY(12px);
             transform: translateY(12px);
-    opacity: 1;
   }
   100% {
     -webkit-transform: translateY(-20px);
             transform: translateY(-20px);
-    opacity: 1;
   }
 }
 
@@ -124,11 +127,27 @@
   0% {
     -webkit-transform: translateY(12px);
             transform: translateY(12px);
-    opacity: 1;
   }
   100% {
     -webkit-transform: translateY(-20px);
             transform: translateY(-20px);
+  }
+}
+
+@-webkit-keyframes flame_glow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flame_glow {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }

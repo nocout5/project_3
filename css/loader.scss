@@ -32,7 +32,7 @@ $tertiary_color_darker: #008766;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: loader_end 1s 10s forwards;
+    animation: loader_end 1s 6s forwards;
 
     &__anim {
         height: 100%;
@@ -42,13 +42,23 @@ $tertiary_color_darker: #008766;
             &__flame {
 
                 & g {
-                    animation: flame -1s infinite alternate linear forwards;
-                    opacity: 0;
+                    animation: flame 0.5s infinite alternate linear ;
                     @for $i from 1 to 7 {
-                        &:nth-child(#{$i}) {
-                            animation-delay: #{$i * 0.2}s;
+                        &:nth-child(#{$i}), &:nth-child(#{$i}) path:nth-child(2){
+                            animation-delay: #{$i * 0.2 - 1}s;
                         }
                     }
+
+                   & path:nth-child(1){
+                        fill: orangered;
+
+                   }
+
+                   & path:nth-child(2){
+                       fill: lighten($color: orangered, $amount: 10);
+                       filter: drop-shadow(0px 0px 6px lighten($color: orangered, $amount: 10));
+                       animation: flame_glow 1s infinite alternate linear backwards;
+                   }
                 }
             }
 
@@ -60,10 +70,7 @@ $tertiary_color_darker: #008766;
     }
 }
 
-#Vector, #Vector_2{
-    fill: yellow;
-    filter: drop-shadow(0px 0px 6px yellow);
-}
+
 
 
 
@@ -88,14 +95,22 @@ $tertiary_color_darker: #008766;
 @keyframes flame {
     0% {
         transform: translateY(12px);
-        opacity: 1;
     }
 
     100% {
         transform: translateY(-20px);
-        opacity: 1;
     }
 
+}
+
+@keyframes flame_glow{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
 }
 
 @keyframes pot {
