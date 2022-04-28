@@ -49,38 +49,32 @@
           animation: flame 0.5s infinite alternate ease-in-out;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(1),
-.loader__anim__cooking-pot__flame g:nth-child(1) path:nth-child(2) {
+.loader__anim__cooking-pot__flame g:nth-child(1) {
   -webkit-animation-delay: -0.8s;
           animation-delay: -0.8s;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(2),
-.loader__anim__cooking-pot__flame g:nth-child(2) path:nth-child(2) {
+.loader__anim__cooking-pot__flame g:nth-child(2) {
   -webkit-animation-delay: -0.6s;
           animation-delay: -0.6s;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(3),
-.loader__anim__cooking-pot__flame g:nth-child(3) path:nth-child(2) {
+.loader__anim__cooking-pot__flame g:nth-child(3) {
   -webkit-animation-delay: -0.4s;
           animation-delay: -0.4s;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(4),
-.loader__anim__cooking-pot__flame g:nth-child(4) path:nth-child(2) {
+.loader__anim__cooking-pot__flame g:nth-child(4) {
   -webkit-animation-delay: -0.2s;
           animation-delay: -0.2s;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(5),
-.loader__anim__cooking-pot__flame g:nth-child(5) path:nth-child(2) {
+.loader__anim__cooking-pot__flame g:nth-child(5) {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
 }
 
-.loader__anim__cooking-pot__flame g:nth-child(6),
-.loader__anim__cooking-pot__flame g:nth-child(6) path:nth-child(2) {
+.loader__anim__cooking-pot__flame g:nth-child(6) {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
@@ -93,8 +87,8 @@
   fill: #ff6a33;
   -webkit-filter: drop-shadow(0px 0px 6px #ff6a33);
           filter: drop-shadow(0px 0px 6px #ff6a33);
-  -webkit-animation: flame_glow 1s infinite alternate linear backwards;
-          animation: flame_glow 1s infinite alternate linear backwards;
+  -webkit-animation: flame_glow 0.8s -0.5s infinite alternate ease-in-out;
+          animation: flame_glow 0.8s -0.5s infinite alternate ease-in-out;
 }
 
 .loader__anim__cooking-pot__pot {
@@ -130,20 +124,20 @@
             transform: scaleX(0);
   }
   25% {
-    -webkit-transform: scaleX(50%);
-            transform: scaleX(50%);
+    -webkit-transform: scaleX(0.5);
+            transform: scaleX(0.5);
   }
   50% {
-    -webkit-transform: scaleX(75%);
-            transform: scaleX(75%);
+    -webkit-transform: scaleX(0.75);
+            transform: scaleX(0.75);
   }
   75% {
-    -webkit-transform: scaleX(85%);
-            transform: scaleX(85%);
+    -webkit-transform: scaleX(0.85);
+            transform: scaleX(0.85);
   }
   100% {
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 
@@ -153,20 +147,20 @@
             transform: scaleX(0);
   }
   25% {
-    -webkit-transform: scaleX(50%);
-            transform: scaleX(50%);
+    -webkit-transform: scaleX(0.5);
+            transform: scaleX(0.5);
   }
   50% {
-    -webkit-transform: scaleX(75%);
-            transform: scaleX(75%);
+    -webkit-transform: scaleX(0.75);
+            transform: scaleX(0.75);
   }
   75% {
-    -webkit-transform: scaleX(85%);
-            transform: scaleX(85%);
+    -webkit-transform: scaleX(0.85);
+            transform: scaleX(0.85);
   }
   100% {
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 
